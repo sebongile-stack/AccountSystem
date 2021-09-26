@@ -1,7 +1,4 @@
 package za.ac.nwu.ac.domain.persistence;
-/**
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import za.ac.nwu.ac.domain.dto.AccountTypeDto;*/
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,18 +7,18 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "ACCOUNTSYSTEMTBL")
+@Table(name = "ACCOUNT_TYPE", schema = "AccountSystem")
 public class AccountType implements Serializable{
 
 
-    private long accountTypeId;
+
+    private Long accountTypeId;
     private String mnemonic;
     private String accountTypeName;
     private LocalDate creationDate;
 
     private Set<AccountTransaction> accountTransaction;
 
-    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate){}
 
     public AccountType(){
 
@@ -33,14 +30,16 @@ public class AccountType implements Serializable{
         this.creationDate = creationDate;
     }
 
-    public AccountType(String mnemonic, AccountType accountType, LocalDate creationDate) {
+    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
+        this.mnemonic = mnemonic;
+        this.accountTypeName = accountTypeName;
     }
 
     @Id
-    @SequenceGenerator(name = "SEBONGILE_SEQ", sequenceName = "SEBONGILE.SEBONGILE_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEBONGILE_SEQ")
+    @SequenceGenerator(name = "AccountSystem_SEQ", sequenceName = "AccountSystem.AccountSystem_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AccountSystem_SEQ")
     @Column(name = "ACCOUNT_TYPE_ID")
-    public long getAccountTypeId(){
+    public Long getAccountTypeId(){
         return accountTypeId;
     }
     @Column(name = "MNEMONIC")

@@ -27,11 +27,12 @@
 
     <modules>
         <module>AccountSystemDomain</module>
-        <module>AccountSystemWeb</module>
-        <module>AccountSystemWebSpringBoot</module>
+        <module>AccountSystemLogic</module>
         <module>AccountSystemRepository</module>
         <module>AccountSystemTranslator</module>
-        <module>AccountSystemLogic</module>
+        <module>AccountSystemWeb</module>
+        <module>AccountSystemWebSpringBoot</module>
+
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -79,14 +80,26 @@
                 <groupId>com.oracle.database.jdbc</groupId>
                 <artifactId>ojdbc8</artifactId>
                 <version>21.1.0.0</version>
-
             </dependency>
 
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>2.2</version>
+            </dependency>
 
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>4.1.4.Final</version>
+            </dependency>
 
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
 
-
-
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -116,6 +129,14 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
 </project>

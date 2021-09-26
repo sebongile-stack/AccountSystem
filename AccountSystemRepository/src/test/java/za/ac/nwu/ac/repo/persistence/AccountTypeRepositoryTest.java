@@ -19,7 +19,8 @@ import static org.junit.Assert.*;
 
 public class AccountTypeRepositoryTest {
     @Autowired
-    AccountTypeRepository repository;
+    AccountTypeRepository accountTypeRepository;
+
     @Before
     public void setUp() throws Exception {
         // What happens before each test

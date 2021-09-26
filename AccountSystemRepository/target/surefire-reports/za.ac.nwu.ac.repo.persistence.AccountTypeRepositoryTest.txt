@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: za.ac.nwu.ac.repo.persistence.AccountTypeRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 21.771 s <<< FAILURE! - in za.ac.nwu.ac.repo.persistence.AccountTypeRepositoryTest
+test(za.ac.nwu.ac.repo.persistence.AccountTypeRepositoryTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [za.ac.nwu.ac.repo.config.RepositoryTestConfig]; nested exception is java.io.FileNotFoundException: class path resource [application-test-db.properties] cannot be opened because it does not exist
+Caused by: java.io.FileNotFoundException: class path resource [application-test-db.properties] cannot be opened because it does not exist
+
