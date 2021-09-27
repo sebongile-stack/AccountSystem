@@ -1,4 +1,4 @@
-package za.ac.nwu.ac.repo.persistence;
+/*package za.ac.nwu.ac.repo.persistence;
 
 import org.junit.After;
 import org.junit.Before;
@@ -34,4 +34,4 @@ public class AccountTypeRepositoryTest {
         // Write a test here
     }
 
-}
+}*/
