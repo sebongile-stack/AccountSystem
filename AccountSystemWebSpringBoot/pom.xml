@@ -3,14 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>za.nwu.ac</groupId>
-        <artifactId>AccountSystem</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-
+    <groupId>za.nwu.ac</groupId>
     <artifactId>AccountSystemWebSpringBoot</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <dependencies>
@@ -18,14 +20,12 @@
             <groupId>za.nwu.ac</groupId>
             <artifactId>AccountSystemDomain</artifactId>
             <version>${project.version}</version>
-
-
         </dependency>
+
         <dependency>
             <groupId>za.nwu.ac</groupId>
             <artifactId>AccountSystemLogic</artifactId>
             <version>${project.version}</version>
-
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,21 +35,26 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
         </dependency>
 
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
+            <version>1.5.20</version>
         </dependency>
 
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+
         </dependency>
 
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-bean-validators</artifactId>
+            <version>2.9.2</version>
         </dependency>
 
     </dependencies>

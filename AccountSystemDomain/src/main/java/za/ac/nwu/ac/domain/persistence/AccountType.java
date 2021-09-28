@@ -10,8 +10,6 @@ import java.util.Set;
 @Table(name = "ACCOUNT_TYPE", schema = "AccountSystem")
 public class AccountType implements Serializable{
 
-
-
     private Long accountTypeId;
     private String mnemonic;
     private String accountTypeName;

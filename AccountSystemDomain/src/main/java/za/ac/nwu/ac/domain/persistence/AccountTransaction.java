@@ -31,7 +31,7 @@ public class AccountTransaction implements Serializable{
     @Id
     @SequenceGenerator(name = "AccountSystem_SEQ", sequenceName = "AccountSystem.AccountSystem_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AccountSystem_SEQ")
-    @Column(name = "TX_ID")
+    @Column(name = "TRANSACTION_ID")
     public long getTransactionId(){
         return transactionId;
     }
@@ -44,7 +44,7 @@ public class AccountTransaction implements Serializable{
         return amount;
     }
 
-    @Column(name = "Transaction_DATE")
+    @Column(name = "TRANSACTION_DATE")
     public LocalDate getTransactionDate(){
         return transactionDate;
     }

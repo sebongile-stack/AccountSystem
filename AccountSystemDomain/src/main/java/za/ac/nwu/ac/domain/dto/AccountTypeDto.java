@@ -9,11 +9,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-
-
 @ApiModel(value = "AccountType", description = "A DTO that represents the AccountType")
 
 public class AccountTypeDto implements Serializable{
+
     private static final long serialVersionUID = 5823105690934256044L;
     private String mnemonic;
     private String accountTypeName;
