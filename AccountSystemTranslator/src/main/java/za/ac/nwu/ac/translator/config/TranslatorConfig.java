@@ -7,7 +7,7 @@ import za.ac.nwu.ac.repo.config.RepositoryConfig;
 
 @Import({RepositoryConfig.class})
 @Configuration
-@ComponentScan(basePackages = {"za.ac.nwu.ac.translator.AccountTypeTranslator"})
+@ComponentScan(basePackages = {"za.ac.nwu.ac.translator"})
 
 public class TranslatorConfig {
 }

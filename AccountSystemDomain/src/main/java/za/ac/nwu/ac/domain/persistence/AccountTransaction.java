@@ -7,8 +7,10 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "AccountSystem")
+@Table(name = "DEMO_ACCOUNT_TYPE", schema = "SEBONGILE")
 public class AccountTransaction implements Serializable{
+
+    private static final long serialVersionUID = -7785421760893770535L;
 
     private Long transactionId;
     @ManyToMany
@@ -29,12 +31,13 @@ public class AccountTransaction implements Serializable{
         this.transactionDate = transactionDate;
     }
     @Id
-    @SequenceGenerator(name = "AccountSystem_SEQ", sequenceName = "AccountSystem.AccountSystem_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AccountSystem_SEQ")
+    @SequenceGenerator(name = "SEBONGILE_SEQ", sequenceName = "SEBONGILE.SEBONGILE_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEBONGILE_SEQ")
     @Column(name = "TRANSACTION_ID")
-    public long getTransactionId(){
+    public Long getTransactionId(){
         return transactionId;
     }
+
     @Column(name = "MEMBER_ID")
     public Long getMemberId(){
         return memberId;}
@@ -70,7 +73,7 @@ public class AccountTransaction implements Serializable{
         this.amount = amount;
     }
 
-    public void setTransactionId(LocalDate transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
     }
 

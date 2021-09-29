@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Import;
 
 //import oracle.jdbc.OracleDriver;
 
-@SpringBootApplication(exclude=DataSourceAutoConfiguration.class)
-@ComponentScan({"za.ac.nwu.ac.translator.AccountTypeTranslator"})
+@SpringBootApplication/*(exclude=DataSourceAutoConfiguration.class)*/
+//@ComponentScan({"za.ac.nwu.ac.translator.AccountTypeTranslator"})
 
 public class RestServiceApplication
 {

@@ -10,9 +10,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/AccountSsystemWebSpringBoot/pom.xml" />
-        <option value="$PROJECT_DIR$/AccountSystemLogic/pom.xml" />
-        <option value="$PROJECT_DIR$/AccountSystemRepository/pom.xml" />
-        <option value="$PROJECT_DIR$/AccountSystemTranslator/pom.xml" />
       </set>
     </option>
   </component>

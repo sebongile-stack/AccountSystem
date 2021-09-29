@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public class GeneralResponse<T> implements Serializable{
 
+
+    private static final long serialVersionUID = 8364711764152824723L;
     private final boolean successful;
     private final transient  T payload;
 
@@ -25,9 +27,11 @@ public class GeneralResponse<T> implements Serializable{
     public boolean equals(Object o){
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        GeneralResponse<?> that = (GeneralResponse<?>) o;
+        za.ac.nwu.ac.domain.service.GeneralResponse<?> that = (za.ac.nwu.ac.domain.service.GeneralResponse<?>) o;
         return successful == that.successful && Objects.equals(payload, that.payload);
     }
+
+    public int hashCode(){return Objects.hash(successful, payload);}
 
     @Override
     public String toString(){

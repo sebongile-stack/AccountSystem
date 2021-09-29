@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public abstract class AccountTypeTranslatorImpl implements AccountTypeTranslator{
+public  class AccountTypeTranslatorImpl implements AccountTypeTranslator{
 
     private final AccountTypeRepository accountTypeRepository;
 
@@ -66,9 +66,9 @@ public abstract class AccountTypeTranslatorImpl implements AccountTypeTranslator
     @Override
     public AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic){
         try{
-            AccountType accountType = accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
+            /*AccountType accountType = accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);*/
 
-            return new AccountTypeDto(accountType);
+            return accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
         }
         catch(Exception e){
             throw new RuntimeException("Unable to read from the database",e);

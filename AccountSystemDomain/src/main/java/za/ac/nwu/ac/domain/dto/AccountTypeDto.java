@@ -14,6 +14,7 @@ import java.util.Objects;
 public class AccountTypeDto implements Serializable{
 
     private static final long serialVersionUID = 5823105690934256044L;
+
     private String mnemonic;
     private String accountTypeName;
     private LocalDate creationDate;
@@ -36,12 +37,13 @@ public class AccountTypeDto implements Serializable{
     value = "AccountType Mnemonic",
     name  = "Mnemonic",
     notes = "Uniquely identifies the account type",
-    dataType = "java.long.String",
+    dataType = "java.lang.String",
     example = "MILES",
     required = true
     )
 
-    public String getMnemonic(){return mnemonic;}
+    public String getMnemonic()
+    {return mnemonic;}
     public void setMnemonic(String mnemonic) {
         this.mnemonic = mnemonic;
     }
@@ -56,6 +58,8 @@ public class AccountTypeDto implements Serializable{
     )
 
     public String getAccountTypeName(){return accountTypeName;}
+
+
     public void setAccountTypeName(String accountTypeName) {
         this.accountTypeName = accountTypeName;
     }
@@ -70,32 +74,35 @@ public class AccountTypeDto implements Serializable{
     )
 
     public LocalDate getCreationDate(){return creationDate;}
+
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
     @Override
-    public boolean equals(Object o){
-        if(this == o) return true;
-        if(o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         AccountTypeDto that = (AccountTypeDto) o;
         return Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(creationDate, that.creationDate);
     }
+
     @JsonIgnore
     public AccountType getAccountType(){
         return new AccountType(getMnemonic(), getAccountTypeName(), getCreationDate());
     }
 
     @Override
-    public int hashCode() {return Objects.hash(mnemonic, accountTypeName, creationDate);}
+    public int hashCode() {
+        return Objects.hash(mnemonic, accountTypeName, creationDate);
+    }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "AccountTypeDto{" +
                 "mnemonic='" + mnemonic + '\'' +
                 ", accountTypeName='" + accountTypeName + '\'' +
                 ", creationDate=" + creationDate +
                 '}';
     }
-
 }

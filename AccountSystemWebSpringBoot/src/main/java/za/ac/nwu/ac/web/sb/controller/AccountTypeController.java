@@ -24,14 +24,18 @@ import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 
 @RestController
 @RequestMapping("account-type")
-public @ResponseBody class AccountTypeController {
+public class AccountTypeController
+/*public @ResponseBody class AccountTypeController*/
+{
 
     private final FetchAccountTypeFlow fetchAccountTypeFlow;
     private final CreateAccountTypeFlow createAccountTypeFlow;
     private final ChangeAccountTypeFlow changeAccountTypeFlow;
 
     @Autowired
-    public AccountTypeController(FetchAccountTypeFlow fetchAccountTypeFlow, @Qualifier("CreateAccountTypeFlowName") CreateAccountTypeFlow createAccountTypeFlow, ChangeAccountTypeFlow changeAccountTypeFlow){
+    public AccountTypeController(FetchAccountTypeFlow fetchAccountTypeFlow,
+                                 @Qualifier("createAccountTypeFlowName") CreateAccountTypeFlow createAccountTypeFlow,
+                                 ChangeAccountTypeFlow changeAccountTypeFlow) {
         this.fetchAccountTypeFlow = fetchAccountTypeFlow;
         this.createAccountTypeFlow = createAccountTypeFlow;
         this.changeAccountTypeFlow = changeAccountTypeFlow;
@@ -50,8 +54,9 @@ public @ResponseBody class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+
     @PostMapping("")
-    @ApiOperation(value = "Gets all the configured account types.", notes = "Returns a list of account types.")
+    @ApiOperation(value = "Creates all the configured account types.", notes = "Returns a list of account types.")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Account types returned", response = GeneralResponse.class),
             @ApiResponse(code = 400, message = "Bad request", response = GeneralResponse.class),
@@ -63,6 +68,7 @@ public @ResponseBody class AccountTypeController {
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountTypeResponse);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
+
     @GetMapping("{mnemonic}")
     @ApiOperation(value = "Fetches the specified AccountType.", notes = "Fetches the accountType corresponding to the given mnemonic.")
     @ApiResponses(value = {
@@ -85,8 +91,9 @@ public @ResponseBody class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+
     @DeleteMapping("{mnemonic}")
-    @ApiOperation(value = "Fetches the specified AccountType.", notes = "Fetches the accountType corresponding to the given mnemonic.")
+    @ApiOperation(value = "Deletes the specified AccountType.", notes = "Fetches the accountType corresponding to the given mnemonic.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "AccountType Found", response = GeneralResponse.class),
             @ApiResponse(code = 400, message = "Bad Request", response = GeneralResponse.class),
@@ -136,11 +143,7 @@ public @ResponseBody class AccountTypeController {
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
         return new ResponseEntity<>(response, HttpStatus.OK);
 
-
     }
-
-
-
 
 
 }

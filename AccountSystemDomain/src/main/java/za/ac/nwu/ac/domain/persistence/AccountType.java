@@ -7,8 +7,10 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "AccountSystem")
+@Table(name = "DEMO_ACCOUNT_TYPE", schema = "SEBONGILE")
 public class AccountType implements Serializable{
+
+    private static final long serialVersionUID = 6546653819204621164L;
 
     private Long accountTypeId;
     private String mnemonic;
@@ -21,7 +23,7 @@ public class AccountType implements Serializable{
     public AccountType(){
 
     }
-    public AccountType(long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate){
+    public AccountType(Long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate){
         this.accountTypeId = accountTypeId;
         this.mnemonic = mnemonic;
         this.accountTypeName = accountTypeName;
@@ -31,11 +33,12 @@ public class AccountType implements Serializable{
     public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
         this.mnemonic = mnemonic;
         this.accountTypeName = accountTypeName;
+        this.creationDate = creationDate;
     }
 
     @Id
-    @SequenceGenerator(name = "AccountSystem_SEQ", sequenceName = "AccountSystem.AccountSystem_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "AccountSystem_SEQ")
+    @SequenceGenerator(name = "SEBONGILE_SEQ", sequenceName = "SEBONGILE.SEBONGILE_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEBONGILE_SEQ")
     @Column(name = "ACCOUNT_TYPE_ID")
     public Long getAccountTypeId(){
         return accountTypeId;
@@ -54,7 +57,7 @@ public class AccountType implements Serializable{
         return creationDate;
     }
 
-    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType")
     public Set<AccountTransaction> getAccountTransaction(){
         return accountTransaction;
 
@@ -63,7 +66,7 @@ public class AccountType implements Serializable{
         this.accountTransaction = accountTransaction;
     }
 
-    public void setAccountTypeId(long accountTypeId) {
+    public void setAccountTypeId(Long accountTypeId) {
         this.accountTypeId = accountTypeId;
     }
 
