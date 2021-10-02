@@ -11,6 +11,12 @@ import java.util.Set;
 public class AccountType implements Serializable{
 
     private static final long serialVersionUID = 6546653819204621164L;
+    public String memberLName;
+    public String memberFName;
+    public Long numPlays;
+    public Long miles;
+    public Long amount;
+    public LocalDate creatioNDate;
 
     private Long accountTypeId;
     private String mnemonic;
@@ -44,10 +50,6 @@ public class AccountType implements Serializable{
         return accountTypeId;
     }
 
-    @Column(name = "MNEMONIC")
-    public String getMnemonic(){
-        return mnemonic;}
-
     @Column(name = "ACCOUNT_TYPE_NAME")
     public String getAccountTypeName(){
         return accountTypeName;
@@ -57,6 +59,10 @@ public class AccountType implements Serializable{
     public LocalDate getCreationDate(){
         return creationDate;
     }
+
+    @Column(name = "MNEMONIC")
+    public String getMnemonic(){
+        return mnemonic;}
 
     @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType")
     public Set<AccountTransaction> getAccountTransaction(){

@@ -23,23 +23,31 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
             "WHERE MNEMONIC = :mnemonic" , nativeQuery = true)
     AccountType getAccountTypeByMnemonicNativeQuery(String mnemonic);
 
-    @Query(value = "SELECT" +
+    @Query(value = "DELETE" +
+            " FROM" +
+            " AccountType" +
+            " WHERE MNEMONIC = :mnemonic")
+    AccountType getAccountTypeByMnemonic(String mnemonic);
+
+
+    /*@Query(value = "SELECT" +
             " at" +
             " FROM" +
             " AccountType at" +
             " WHERE at.mnemonic = :mnemonic")
     AccountType getAccountTypeByMnemonic(String mnemonic
-    );
+    );*/
 
     @Query(value = "SELECT new za.ac.nwu.ac.domain.dto.AccountTypeDto(" +
-            " at.mnemonic," +
-            " at.accountTypeName," +
+            " at.mnemonic, " +
+            " at.accountTypeName, " +
             " at.creationDate)" +
-            " FROM" +
+            " FROM " +
             " AccountType at" +
             " WHERE at.mnemonic = :mnemonic")
+
     AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic
     );
 
-    //List<AccountType> query(String sql, BeanPropertyRowMapper<AccountType> newInstance);
+
 }

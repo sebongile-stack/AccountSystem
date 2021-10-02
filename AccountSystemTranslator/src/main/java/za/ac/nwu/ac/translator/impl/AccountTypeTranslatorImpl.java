@@ -66,7 +66,7 @@ public  class AccountTypeTranslatorImpl implements AccountTypeTranslator{
     @Override
     public AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic){
         try{
-            /*AccountType accountType = accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);*/
+            AccountTypeDto accountType = accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
 
             return accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
         }
