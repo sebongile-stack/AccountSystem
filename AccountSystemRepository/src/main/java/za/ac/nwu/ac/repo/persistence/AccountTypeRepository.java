@@ -1,10 +1,13 @@
 package za.ac.nwu.ac.repo.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Repository;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 import org.springframework.data.jpa.repository.Query;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+
+import java.util.List;
 
 /*import static org.hibernate.hql.internal.antlr.SqlTokenTypes.FROM;*/
 
@@ -16,7 +19,7 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
             " CREATION_DATE, " +
             " MNEMONIC," +
             " FROM " +
-            " ACCOUNT_TYPE " +
+            " DEMO_ACCOUNT_TYPE " +
             "WHERE MNEMONIC = :mnemonic" , nativeQuery = true)
     AccountType getAccountTypeByMnemonicNativeQuery(String mnemonic);
 
@@ -38,4 +41,5 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
     AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic
     );
 
+    //List<AccountType> query(String sql, BeanPropertyRowMapper<AccountType> newInstance);
 }

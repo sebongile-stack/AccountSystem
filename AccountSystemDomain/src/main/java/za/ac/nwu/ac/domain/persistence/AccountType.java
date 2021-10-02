@@ -43,6 +43,7 @@ public class AccountType implements Serializable{
     public Long getAccountTypeId(){
         return accountTypeId;
     }
+
     @Column(name = "MNEMONIC")
     public String getMnemonic(){
         return mnemonic;}
