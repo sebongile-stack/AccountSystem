@@ -2,39 +2,32 @@ package za.ac.nwu.ac.domain.persistence;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "MEMBER", schema = "SEBONGILE")
 public class Member implements Serializable {
 
     private Long memberId;
     private String memberLName;
     private String memberFName;
     private Long numPlays;
-    private Long miles;
-    private Long amount;
-    private LocalDate creatioNDate;
 
     public Member(){
 
     }
-    public Member(Long memberId, String memberLName, String memberFName, Long numPlays, Long miles, Long amount, LocalDate creatioNDate){
+    public Member(Long memberId, String memberLName, String memberFName, Long numPlays){
         this.memberId = memberId;
         this.memberLName = memberLName;
         this.memberFName = memberFName;
         this.numPlays = numPlays;
-        this.miles = miles;
-        this.amount = amount;
-        this.creatioNDate = creatioNDate;
 
     }
-    public Member(String memberLName, String memberFName, Long numPlays, Long miles, Long amount, LocalDate creatioNDate){
+    public Member(String memberLName, String memberFName, Long numPlays){
         this.memberLName = memberLName;
         this.memberFName = memberFName;
         this.numPlays = numPlays;
-        this.miles = miles;
-        this.amount = amount;
-        this.creatioNDate = creatioNDate;
+
     }
 
     @Id
@@ -50,6 +43,7 @@ public class Member implements Serializable {
         this.memberId = memberId;
     }
 
+    @Column(name = "MEMBERLNAME")
     public String getMemberLName() {
         return memberLName;
     }
@@ -58,6 +52,7 @@ public class Member implements Serializable {
         this.memberLName = memberLName;
     }
 
+    @Column(name = "MEMBERFNAME")
     public String getMemberFName() {
         return memberFName;
     }
@@ -66,6 +61,7 @@ public class Member implements Serializable {
         this.memberFName = memberFName;
     }
 
+    @Column(name = "NUMPLAYS")
     public Long getNumPlays() {
         return numPlays;
     }
@@ -74,36 +70,14 @@ public class Member implements Serializable {
         this.numPlays = numPlays;
     }
 
-    public Long getMiles() {
-        return miles;
-    }
 
-    public void setMiles(Long miles) {
-        this.miles = miles;
-    }
-
-    public Long getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Long amount) {
-        this.amount = amount;
-    }
-
-    public LocalDate getCreatioNDate() {
-        return creatioNDate;
-    }
-
-    public void setCreatioNDate(LocalDate date) {
-        this.creatioNDate = creatioNDate;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountType that = (AccountType) o;
-        return Objects.equals(memberLName, that.memberLName) && Objects.equals(memberFName, that.memberFName) && Objects.equals(numPlays, that.numPlays) && Objects.equals(miles, that.miles) && Objects.equals(amount, that.amount) && Objects.equals(creatioNDate, that.creatioNDate);
+        return Objects.equals(memberLName, that.memberLName) && Objects.equals(memberFName, that.memberFName) && Objects.equals(numPlays, that.numPlays);
     }
 
     @Override

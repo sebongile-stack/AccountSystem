@@ -7,16 +7,14 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "SEBONGILE")
+@Table(name = "ACCOUNT_TYPE", schema = "SEBONGILE")
 public class AccountType implements Serializable{
 
     private static final long serialVersionUID = 6546653819204621164L;
     public String memberLName;
     public String memberFName;
     public Long numPlays;
-    public Long miles;
-    public Long amount;
-    public LocalDate creatioNDate;
+
 
     private Long accountTypeId;
     private String mnemonic;

@@ -7,14 +7,14 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "SEBONGILE")
+@Table(name = "ACCOUNT_TRANSACTION", schema = "SEBONGILE")
 public class AccountTransaction implements Serializable{
 
     private static final long serialVersionUID = -7785421760893770535L;
 
     private Long transactionId;
     @ManyToMany
-    @JoinColumn(name = "account_type_account_type_id")
+    @JoinColumn(name = "ACCOUNT_TYPE_ID")
     private AccountType accountType;
     private Long memberId;
     private Long amount;
