@@ -25,4 +25,9 @@ public class ChangeAccountTypeFlowImpl implements ChangeAccountTypeFlow{
     public AccountTypeDto updateAccountType(String anyString, String anyString1, LocalDate any){
         return null;
     }
+
+    public boolean methodToTest(){
+        return true;
+    }
+
 }

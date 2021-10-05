@@ -1,22 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImplTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.032 s <<< FAILURE! - in za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImplTest
-getAccountTypeByMnemonic(za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImplTest)  Time elapsed: 0 s  <<< FAILURE!
-org.mockito.exceptions.verification.WantedButNotInvoked: 
-
-Wanted but not invoked:
-translator.getAccountTypeByMnemonic(
-    <any java.lang.String>
-);
--> at za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImplTest.getAccountTypeByMnemonic(FetchAccountTypeFlowImplTest.java:42)
-
-However, there was exactly 1 interaction with this mock:
-translator.getAccountTypeByMnemonicNativeQuery(
-    ""
-);
--> at za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImpl.getAccountTypeByMnemonic(FetchAccountTypeFlowImpl.java:34)
-
-
-	at za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImplTest.getAccountTypeByMnemonic(FetchAccountTypeFlowImplTest.java:42)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImplTest

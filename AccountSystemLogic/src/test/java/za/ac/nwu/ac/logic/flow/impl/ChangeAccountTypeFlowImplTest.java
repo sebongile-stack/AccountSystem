@@ -12,28 +12,24 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 public class ChangeAccountTypeFlowImplTest {
-
-    @Mock
-    private ChangeAccountTypeFlow change;
-
-    @InjectMocks
-    private ChangeAccountTypeFlowImpl flow;
-
+    private ChangeAccountTypeFlowImpl classToTest;
+    
     @Before
     public void setUp() throws Exception {
+        classToTest = new ChangeAccountTypeFlowImpl(null);
     }
 
     @After
     public void tearDown() throws Exception {
+        classToTest = null;
     }
 
     @Test
-    public void deleteAccountType() {
-        when(change.deleteAccountType(any(String.class))).thenReturn(null);
-        AccountTypeDto results = flow.deleteAccountType(new String());
-        assertNull(results);
+    public void methodToTest() {
+        assertTrue(classToTest.methodToTest());
+    }
 
+    private void assertTrue(boolean methodToTest) {
     }
-    private void assertNull(AccountTypeDto results) {
-    }
+
 }

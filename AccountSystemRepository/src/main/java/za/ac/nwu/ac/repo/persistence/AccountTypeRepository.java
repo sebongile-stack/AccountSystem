@@ -1,15 +1,10 @@
 package za.ac.nwu.ac.repo.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Repository;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 import org.springframework.data.jpa.repository.Query;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
-
-import java.util.List;
-
-/*import static org.hibernate.hql.internal.antlr.SqlTokenTypes.FROM;*/
 
 @Repository
 public interface AccountTypeRepository extends JpaRepository<AccountType, Long> {
