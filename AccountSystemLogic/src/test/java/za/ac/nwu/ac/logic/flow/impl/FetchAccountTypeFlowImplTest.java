@@ -3,24 +3,45 @@ package za.ac.nwu.ac.logic.flow.impl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.translator.AccountTypeTranslator;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+@RunWith(MockitoJUnitRunner.class)
 public class FetchAccountTypeFlowImplTest {
 
-    private FetchAccountTypeFlowImpl classToTest;
+    @Mock
+    private AccountTypeTranslator translator;
+
+    @InjectMocks
+    private FetchAccountTypeFlowImpl flow;
+
     @Before
     public void setUp() throws Exception {
-        classToTest = new FetchAccountTypeFlowImpl(null);
+
     }
 
     @After
     public void tearDown() throws Exception {
-        classToTest = null;
+
     }
 
     @Test
-    public void methodToTest() {
-        assertTrue(classToTest.methodToTest());
+    public void getAccountTypeByMnemonic(){
+        when(translator.getAccountTypeByMnemonic(any(String.class))).thenReturn(null);
+        AccountTypeDto result = flow.getAccountTypeByMnemonic(new String());
+        assertNull(result);
+    }
+
+    private void assertNull(AccountTypeDto result) {
     }
 }

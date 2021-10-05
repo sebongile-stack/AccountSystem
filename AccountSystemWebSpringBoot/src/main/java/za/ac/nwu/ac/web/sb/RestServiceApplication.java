@@ -1,15 +1,9 @@
 package za.ac.nwu.ac.web.sb;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.annotation.Import;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import za.ac.nwu.ac.domain.persistence.AccountType;
-import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
+
 
 import java.util.List;
 
