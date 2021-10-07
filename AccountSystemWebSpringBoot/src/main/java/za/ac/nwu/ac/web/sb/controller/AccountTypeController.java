@@ -78,14 +78,15 @@ public class AccountTypeController
             @ApiResponse(code = 500, message = "Internal server error", response = GeneralResponse.class)
     })
     public ResponseEntity<GeneralResponse<AccountTypeDto>> getAccountType(
-            @ApiParam(value = "The mnemonic that uniquely identifies the AccountType.",
-                    example = "MILES",
-                    name = "mnemonic",
+            @ApiParam(value = "",
+                    example = "",
+                    name = "",
                     required = true
 
             )
             @PathVariable("mnemonic") final String mnemonic
-    ){
+            ) {
+
         AccountTypeDto accountType = fetchAccountTypeFlow.getAccountTypeByMnemonic(mnemonic);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
         return new ResponseEntity<>(response, HttpStatus.OK);
