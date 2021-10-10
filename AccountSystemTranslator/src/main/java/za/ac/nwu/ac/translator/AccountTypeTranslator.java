@@ -16,8 +16,6 @@ public interface AccountTypeTranslator {
 
     AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic);
 
-    //AccountTypeDto getAccountTypeDtoByMnemonicNativeQuery(String mnemonic);
 
-    // AccountTypeDto getAccountTypeDtoByMnemonicNativeQuery(String mnemonic);
 
 }

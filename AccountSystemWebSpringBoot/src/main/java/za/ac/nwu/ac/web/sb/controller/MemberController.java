@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("account-type")
+@RequestMapping("member")
 
 public class MemberController {
 }

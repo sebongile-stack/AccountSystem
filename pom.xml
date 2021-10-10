@@ -140,8 +140,7 @@
                                 <excludes>
                                     <exclude>za.ac.nwu.ac.domain.dto.*</exclude>
                                     <exclude>za.ac.nwu.ac.logic.config.LogicConfig</exclude>
-                                    <!--<exclude>za.ac.nwu.ac.logic.flow.impl.CreateAccountTypeFlowImpl</exclude>
-                                    <exclude>za.ac.nwu.ac.logic.flow.impl.FetchAccountTypeFlowImpl</exclude>-->
+
                                 </excludes>
                                 <limits>
                                     <limit>
